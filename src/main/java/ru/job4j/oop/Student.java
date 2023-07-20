@@ -3,7 +3,7 @@ package ru.job4j.oop;
 public class Student {
 
     public void music() {
-        System.out.println(" Tra Tra Tra");
+        System.out.println("Tra Tra Tra");
     }
 
     public void sing() {
