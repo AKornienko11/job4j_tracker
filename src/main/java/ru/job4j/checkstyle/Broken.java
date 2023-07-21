@@ -24,5 +24,5 @@ public class Broken {
 
     public String surname;
 
-    public static final String NEW_VALUE = " ";
+    public static final String NEW_VALUE = "";
 }
