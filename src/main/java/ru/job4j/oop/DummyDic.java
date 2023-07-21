@@ -9,6 +9,6 @@ public class DummyDic {
     public static void main(String[] args) {
         DummyDic word = new DummyDic();
         String say = word.engToRus();
-        System.out.println("Не известное слово. " + say);
+        System.out.println(" Не известное слово. " + say);
     }
 }
