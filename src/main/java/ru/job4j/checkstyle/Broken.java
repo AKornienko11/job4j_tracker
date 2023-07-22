@@ -10,18 +10,18 @@ public class Broken {
 
     private static final String NEW_VALUE = "";
 
-    Broken() {
+    public Broken() {
     }
 
-    void echo() {
+    public void echo() {
     }
 
-    void media(Object obj) {
+    public void media(Object obj) {
         if (obj != null) {
             System.out.println(obj);
         }
     }
 
-    void method(int a, int b, int c, int d) {
+    public void method(int a, int b, int c, int d) {
     }
 }
