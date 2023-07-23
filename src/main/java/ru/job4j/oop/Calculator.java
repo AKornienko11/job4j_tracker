@@ -37,5 +37,6 @@ public class Calculator {
         System.out.println(div);
         int allOperation = calculator.sumAllOperation(10);
         System.out.println(allOperation);
+
     }
 }
