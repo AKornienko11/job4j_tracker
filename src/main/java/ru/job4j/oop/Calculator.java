@@ -4,39 +4,41 @@ public class Calculator {
 
     private static int x = 5;
 
-    public static int sum(int y) {
+    public static int sum() {
+        int y = 2;
         return x + y;
     }
 
-    public int multiply(int a) {
-        return x * a;
-    }
-
-    public static int minus(int z) {
+    public static int minus() {
+        int z = 10;
         return z - x;
     }
 
-    public int divide(int b) {
+    public int multiply() {
+        int a = 4;
+        return x * a;
+    }
+
+    public int divide() {
+        int b = 15;
         return b / x;
     }
 
-    public int sumAllOperation(int c) {
-        c = sum(2) + multiply(4) + minus(10) + divide(15);
-        return c;
+    public int sumAllOperation() {
+        return sum() + multiply() + minus() + divide();
     }
 
     public static void main(String[] args) {
-        int result = Calculator.sum(2);
+        int result = sum();
         System.out.println(result);
-        int result1 = Calculator.minus(10);
+        int result1 = minus();
         System.out.println(result1);
         Calculator calculator = new Calculator();
-        int multi = calculator.multiply(4);
+        int multi = calculator.multiply();
         System.out.println(multi);
-        int div = calculator.divide(15);
+        int div = calculator.divide();
         System.out.println(div);
-        int allOperation = calculator.sumAllOperation(10);
+        int allOperation = calculator.sumAllOperation();
         System.out.println(allOperation);
-
     }
 }
