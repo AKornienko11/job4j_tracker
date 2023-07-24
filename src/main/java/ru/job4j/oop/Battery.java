@@ -14,8 +14,6 @@ public class Battery {
     public void exchange(Battery another) {
         another.load += this.load;
         this.load = 0;
-        System.out.println(another.load);
-        System.out.println(this.load);
     }
 
     public static void main(String[] args) {
