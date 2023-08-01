@@ -19,10 +19,13 @@ public class Shop {
         products[2] = new Product("Egg", 19);
         for (int i = 0; i < products.length; i++) {
             Product product = products[i];
+
             if (product != null) {
                 System.out.println(product.getName());
             }
         }
     }
+
 }
+
 
