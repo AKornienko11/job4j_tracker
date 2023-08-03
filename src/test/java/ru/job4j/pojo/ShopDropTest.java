@@ -13,6 +13,7 @@ public class ShopDropTest {
         Product[] rsl = ShopDrop.delete(products, 0);
         assertThat(rsl[0].getName()).isEqualTo("Bread");
         assertThat(rsl[1]).isNull();
+
     }
 
     @Test
