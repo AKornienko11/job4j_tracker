@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 
+@SuppressWarnings("checkstyle:EmptyLineSeparator")
 public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
@@ -14,20 +15,7 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] rsl = new Item[items.length];
-        int count = 0;
-        for (int index = 0; index < size; index++) {
-            Item name = items[index];
-            if (name != null) {
-                rsl[count] = name;
-                count++;
-            }
-        }
-        rsl = Arrays.copyOf(rsl, count);
-        for (int index = 0; index < rsl.length; index++) {
-            System.out.println(rsl[index]);
-        }
-        return rsl;
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
@@ -40,23 +28,33 @@ public class Tracker {
                 count++;
             }
         }
-        names = Arrays.copyOf(names, count);
-        for (int index = 0; index < names.length; index++) {
-            System.out.println(names[index]);
-        }
-        return names;
+        return Arrays.copyOf(names, count);
     }
 
     public Item findById(int id) {
-        Item rsl = null;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
         for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
+            if (items[index].getId() == id) {
+                rsl = index;
                 break;
             }
         }
         return rsl;
+    }
+
+    public boolean replace(int id, Item item) {
+        if (id <= size) {
+            int index = indexOf(id);
+            items[index] = item;
+            item.setId(id);
+            return (id == item.getId());
+        }
+        return false;
     }
 }
 
