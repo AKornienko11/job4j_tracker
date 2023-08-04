@@ -58,10 +58,5 @@ public class Tracker {
         }
         return rsl;
     }
-
-    public static void main(String[] args) {
-        Tracker tracker = new Tracker();
-        System.out.println(tracker.findAll());
-    }
 }
 
