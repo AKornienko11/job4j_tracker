@@ -57,6 +57,5 @@ public class Item {
     public LocalDateTime getCreated() {
         return created;
     }
-
 }
 
