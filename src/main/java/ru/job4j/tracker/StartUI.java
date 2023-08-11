@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class StartUI {
     public void init(Scanner scanner, Tracker tracker) {
-        Scanner input = new Scanner(System.in);
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.println(" Select: ");
-            int select = Integer.parseInt(input.nextLine());
+            System.out.print(" Select: ");
+            int select = Integer.parseInt(scanner.nextLine());
             if (select != 6) {
                 System.out.println("Пользователь выбрал: " + select);
             } else {
