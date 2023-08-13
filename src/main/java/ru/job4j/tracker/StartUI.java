@@ -30,7 +30,7 @@ public class StartUI {
                 System.out.println("=== Edit item ===");
                 System.out.print(" Enter id ");
                 int id = Integer.parseInt(scanner.nextLine());
-                System.out.print(" Enter name");
+                System.out.print(" Enter name ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 if (tracker.replace(id, item)) {
@@ -40,7 +40,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete item ===");
-                System.out.println(" Enter id");
+                System.out.print(" Enter id ");
                 int id = Integer.parseInt(scanner.nextLine());
                 if (tracker.delete(id)) {
                     System.out.println(" Заявка  удалена успешно");
