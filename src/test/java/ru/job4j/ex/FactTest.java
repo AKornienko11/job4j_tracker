@@ -21,7 +21,7 @@ class FactTest {
     public void whenNotException() {
         int n = 4;
         int result = new Fact().calc(n);
-        int expected = 6;
+        int expected = 24;
         assertThat(result).isEqualTo(expected);
     }
 }
