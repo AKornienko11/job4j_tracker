@@ -12,7 +12,7 @@ public class FindEl {
         if (rsl == -1) {
             throw new ElementNotFoundException("В массиве нет искомого элемента");
         }
-       return rsl;
+        return rsl;
     }
 
     public static void main(String[] args) {
@@ -20,6 +20,7 @@ public class FindEl {
             indexOf(new String[]{"A", "B", "C"}, "D");
         } catch (ElementNotFoundException e) {
             System.out.println("Введите другой элемент");
+
         }
     }
 }
