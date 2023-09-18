@@ -3,26 +3,24 @@ package ru.job4j.ex;
 public class UserStore {
     public static User findUser(User[] user, String login) throws UserNotFoundException {
         User rsl = null;
-        for (int index = 0; index < user.length; index++) {
-            if (!String.valueOf(user[index]).equals(login)) {
-                throw new UserNotFoundException("пользователь не найден");
-            } else {
-                rsl = ((user[index]));
+        for (User users : user) {
+            if (users.getUserName().equals(login)) {
+                rsl = users;
+                break;
+            }
+            if (rsl == null) {
+                throw new UserNotFoundException("Пользоатель не найден");
             }
         }
         return rsl;
     }
 
     public static boolean validate(User user) throws UserNotInvalidException {
-        boolean result = false;
-        if (user.isValid()) {
-            result = true;
+        if (!user.isValid() || (user.getUserName().length() < 3)) {
+            throw new UserNotInvalidException("Не валидный пользователь");
         }
-         if (result) {
-             throw new UserNotInvalidException("Не валидный пользователь");
-         }
-     return result;
-}
+        return true;
+    }
 
     public static void main(String[] args) throws UserNotFoundException {
         User[] users = {
@@ -31,16 +29,15 @@ public class UserStore {
         User user = findUser(users, "Petr Arsentev");
         if (validate(user)) {
             System.out.println("This user has an access");
-
-            try {
-                if (findUser(users, "Petr Arsentev") != null) {
-                    validate(user);
-                }
-            } catch (UserNotInvalidException e) {
-                System.out.println("Не валидный пользователь");
-            } catch (UserNotFoundException e) {
-                System.out.println("пользователь не найден");
+        }
+        try {
+            if (findUser(users, "Petr Arsentev") != null) {
+                validate(user);
             }
+        } catch (UserNotInvalidException e) {
+            System.out.println("Не валидный пользователь");
+        } catch (UserNotFoundException e) {
+            System.out.println("пользователь не найден");
         }
     }
 }

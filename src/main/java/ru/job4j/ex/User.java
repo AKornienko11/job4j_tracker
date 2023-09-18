@@ -15,7 +15,7 @@ public class User {
 
     public boolean isValid() {
         valid = true;
-        if ((getUserName() == null) && (userName.length() < 3)) {
+        if ((getUserName() == null)) {
             valid = false;
         }
         return valid;
