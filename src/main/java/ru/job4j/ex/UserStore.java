@@ -8,15 +8,15 @@ public class UserStore {
                 rsl = users;
                 break;
             }
-            if (rsl == null) {
-                throw new UserNotFoundException("Пользоатель не найден");
-            }
+        }
+        if (rsl == null) {
+            throw new UserNotFoundException("Пользоатель не найден");
         }
         return rsl;
     }
 
     public static boolean validate(User user) throws UserNotInvalidException {
-        if (!user.isValid() || (user.getUserName().length() < 3)) {
+        if (user.isValid() && (user.getUserName().length() < 3)) {
             throw new UserNotInvalidException("Не валидный пользователь");
         }
         return true;
