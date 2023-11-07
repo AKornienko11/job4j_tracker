@@ -17,5 +17,6 @@ public class ConvertListTest {
         List<Integer> result = ConvertList.convert(list);
         List<Integer> expect = Arrays.asList(1, 2, 3);
         assertThat(result).containsAll(expect);
+
     }
 }
