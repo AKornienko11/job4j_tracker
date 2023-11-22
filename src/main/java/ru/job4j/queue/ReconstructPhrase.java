@@ -33,6 +33,7 @@ public class ReconstructPhrase {
 
     public String getReconstructPhrase() {
         return getEvenElements() + getDescendingElements();
+
     }
 
 }
