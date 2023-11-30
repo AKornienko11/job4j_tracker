@@ -41,12 +41,8 @@ public class AnalyzeByMap {
             count++;
             List<Subject> subjects = pupil.subjects();
             for (Subject subject : subjects) {
-                if (!map.containsKey(subject.name())) {
-                    map.put(subject.name(), subject.score());
-                } else {
-                    int sumScore = map.get(subject.name());
-                    map.put(subject.name(), sumScore + subject.score());
-                }
+                int sumScore = map.getOrDefault(subject.name(), 0);
+                map.put(subject.name(), sumScore + subject.score());
             }
         }
         Set<String> keys = map.keySet();
@@ -68,9 +64,13 @@ public class AnalyzeByMap {
             }
             labels.add(new Label(pupil.name(), averageSum));
         }
-        labels.sort(Comparator.naturalOrder());
-        for (Label res : labels) {
-            result = res;
+
+        for (Label rsl : labels) {
+            if (rsl == Collections.max(labels)) {
+                result = rsl;
+
+            }
+
         }
         return result;
     }
@@ -95,9 +95,10 @@ public class AnalyzeByMap {
             Label label = new Label(key, (double) (map.get(key)));
             labels.add(label);
         }
-        labels.sort(Comparator.naturalOrder());
         for (Label rsl : labels) {
-            result = rsl;
+            if (rsl == Collections.max(labels)) {
+                result = rsl;
+            }
         }
         return result;
     }
