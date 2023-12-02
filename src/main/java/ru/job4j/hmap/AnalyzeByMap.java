@@ -64,13 +64,12 @@ public class AnalyzeByMap {
             }
             labels.add(new Label(pupil.name(), averageSum));
         }
-
+        double max = labels.get(0).score();
         for (Label rsl : labels) {
-            if (rsl == Collections.max(labels)) {
+            if (rsl.score() >= max) {
+                max = rsl.score();
                 result = rsl;
-
             }
-
         }
         return result;
     }
@@ -95,8 +94,10 @@ public class AnalyzeByMap {
             Label label = new Label(key, (double) (map.get(key)));
             labels.add(label);
         }
+        double max = labels.get(0).score();
         for (Label rsl : labels) {
-            if (rsl == Collections.max(labels)) {
+            if (rsl.score() >= max) {
+                max = rsl.score();
                 result = rsl;
             }
         }
