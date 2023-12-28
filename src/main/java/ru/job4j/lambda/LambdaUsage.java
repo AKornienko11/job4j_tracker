@@ -8,7 +8,7 @@ public class LambdaUsage {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("eeeee", "a", "ccc", "dddd", "bb");
         Comparator<String> comparator = (str1, str2) -> {
-            System.out.println("compare - " + str2.length() + " : " + str1.length());
+            System.out.println("compare - " + str1.length() + " : " + str2.length());
             return Integer.compare(str2.length(), str1.length());
         };
 
