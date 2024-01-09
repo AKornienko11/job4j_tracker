@@ -24,5 +24,6 @@ public class StreamUsage {
                 .map(task -> task.name + " " + task.spent)
                 .forEach(System.out::println);
     }
+
 }
 
