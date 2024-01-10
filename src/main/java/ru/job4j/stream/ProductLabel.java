@@ -10,4 +10,5 @@ public class ProductLabel {
                 map(product -> new Label(product.getName(), product.getPrice() / 2).toString())
                 .collect(Collectors.toList());
     }
+
 }

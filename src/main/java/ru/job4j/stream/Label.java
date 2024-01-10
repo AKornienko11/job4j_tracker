@@ -52,4 +52,5 @@ public class Label {
     public void setPrice(float price) {
         this.price = price;
     }
+
 }

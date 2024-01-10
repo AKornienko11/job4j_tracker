@@ -28,4 +28,5 @@ public class ProductLabelTest {
         List<String> expected = Arrays.asList(one.toString(), two.toString(), three.toString(), four.toString());
         assertThat(strings).hasSameElementsAs(expected);
     }
+
 }
