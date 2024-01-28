@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.bank;
 
 import ru.job4j.bank.Account;
 import ru.job4j.bank.User;

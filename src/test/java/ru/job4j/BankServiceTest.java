@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import ru.job4j.bank.BankService;
 import ru.job4j.bank.User;
 import ru.job4j.bank.Account;
 
