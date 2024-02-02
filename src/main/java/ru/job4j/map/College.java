@@ -17,6 +17,7 @@ public class College {
         for (Student rsl : students.keySet()) {
             if (rsl.account().equals(account)) {
                 result = Optional.of(rsl);
+                break;
             }
         }
         return result;
@@ -31,6 +32,7 @@ public class College {
             for (Subject sub : subjects) {
                 if (sub.name().equals(name)) {
                     result = Optional.of(sub);
+                    break;
                 }
             }
         }
